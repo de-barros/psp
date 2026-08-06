@@ -1,0 +1,758 @@
+* 00000014
+*! version 1.0.0
+* Do not erase or edit this file
+* It is used by Stata to track the ado and help
+* files you have installed.
+
+S http://fmwww.bc.edu/repec/bocode/f
+N ftools.pkg
+D  9 Jun 2026
+U 1
+d 'FTOOLS': module to provide alternatives to common Stata commands optimized for large datasets
+d 
+d  ftools consists of a Mata file and several Stata commands: The
+d Mata file creates identifiers (factors) from variables by using
+d hash functions instead of sorting the data, so it runs in time
+d O(N) and not in O(N log N). The Stata commands exploit this to
+d avoid sort operations,  at the cost of being slower for small
+d datasets (mainly because of the cost involved in moving data from
+d Stata to Mata). Implemented commands are fcollapse, fegen group,
+d and fsort. Note that most of the capabilities of levels and
+d contract are already supported by these commands. Possible
+d commands include more egen functions and merge and reshape
+d alternatives.
+d 
+d KW: levels
+d KW: collapse
+d KW: contract
+d KW: egen
+d KW: sort
+d KW: factor variables
+d KW: Mata
+d 
+d Requires: Stata version 11.2 (Stata 12 or older also require boottest from SSC)
+d 
+d Distribution-Date: 20260111
+d 
+d Author: Sergio Correia, Board of Governors of the Federal Reserve System
+d Support: email sergio.correia@@gmail.com
+d 
+f f\ftools.ado
+f f\ftools.mata
+f f\ftools.sthlp
+f f\fcollapse.ado
+f f\fcollapse.sthlp
+f f\fegen.ado
+f f\fegen_group.ado
+f f\fegen.sthlp
+f f\fisid.ado
+f f\fisid.sthlp
+f f\flevelsof.ado
+f f\flevelsof.sthlp
+f f\fmerge.ado
+f f\fmerge.sthlp
+f f\freshape.ado
+f f\fsort.ado
+f f\fsort.sthlp
+f f\ftab.ado
+f j\join.ado
+f j\join.sthlp
+f l\local_inlist.ado
+f l\local_inlist.sthlp
+f f\fcollapse_functions.mata
+f f\fcollapse_main.mata
+f f\ftools_type_aliases.mata
+f f\ftools.mata
+f f\ftools_common.mata
+f f\ftools_hash1.mata
+f f\ftools_main.mata
+f f\ftools_experimental.mata
+f f\ftools_plugin.mata
+f f\ftools_type_aliases.mata
+f m\ms_compile_mata.ado
+f m\ms_expand_varlist.ado
+f m\ms_fvstrip.ado
+f m\ms_fvstrip.sthlp
+f m\ms_fvunab.ado
+f m\ms_get_version.ado
+f m\ms_parse_absvars.ado
+f m\ms_parse_depvar.ado
+f m\ms_parse_varlist.ado
+f m\ms_parse_vce.ado
+f m\ms_add_comma.ado
+f p\parallel_map_template.do.ado
+f p\parallel_map.ado
+f p\parallel_map.sthlp
+e
+S http://fmwww.bc.edu/repec/bocode/r
+N reghdfe.pkg
+D  9 Jun 2026
+U 2
+d 'REGHDFE': module to perform linear or instrumental-variable regression absorbing any number of high-dimensional fixed effects
+d 
+d  reghdfe fits a linear or instrumental-variable regression
+d absorbing an arbitrary number of categorical factors and
+d factorial interactions Optionally, it saves the estimated fixed
+d effects.
+d 
+d KW: regression
+d KW: instrumental variables
+d KW: fixed effects
+d KW: high dimension fixed effects
+d 
+d Requires: Stata version 11.2 and ftools from SSC (q.v.)
+d 
+d Distribution-Date: 20260111
+d 
+d Author: Sergio Correia, Board of Governors of the Federal Reserve System
+d Support: email sergio.correia@@gmail.com
+d 
+d Author: Noah Constantine, Board of Governors of the Federal Reserve System
+d Support: email
+d 
+f r\reghdfe.ado
+f r\reghdfe.mata
+f r\reghdfe5.mata
+f r\reghdfe3.ado
+f r\reghdfe_p.ado
+f r\reghdfe3_p.ado
+f r\reghdfe5.ado
+f r\reghdfe5_p.ado
+f r\reghdfe_estat.ado
+f r\reghdfe3_estat.ado
+f r\reghdfe5_estat.ado
+f r\reghdfe5_parse.ado
+f r\reghdfe_footnote.ado
+f r\reghdfe3_footnote.ado
+f r\reghdfe5_footnote.ado
+f e\estfe.ado
+f r\reghdfe_header.ado
+f r\reghdfe5_header.ado
+f r\reghdfe5_parse.ado
+f r\reghdfe.sthlp
+f r\reghdfe3.sthlp
+f r\reghdfe5.sthlp
+f r\reghdfe.mata
+f r\reghdfe_programming.sthlp
+e
+S http://fmwww.bc.edu/repec/bocode/l
+N lassopack.pkg
+D  9 Jun 2026
+U 3
+d 'LASSOPACK': module for lasso, square-root lasso, elastic net, ridge, adaptive lasso estimation and cross-validation
+d 
+d  LASSOPACK is a suite of programs for penalized regression
+d methods suitable for the high-dimensional setting where the
+d number of predictors p may be large and possibly greater than the
+d number of observations. LASSOPACK supports both lasso and
+d logistic lasso regression. The package consists of six main
+d programs: lasso2 implements lasso, square-root lasso, elastic
+d net, ridge regression, adaptive lasso and post-estimation OLS.
+d cvlasso supports K-fold cross-validation and rolling
+d cross-validation for cross-section, panel and time-series data.
+d rlasso implements theory-driven penalization for the lasso and
+d square-root lasso for cross-section and panel data. lassologit,
+d cvlassologit and rlassologit are the corresponding programs for
+d logistic lasso regression. The lasso (Least Absolute Shrinkage
+d and Selection Operator, Tibshirani 1996), the square-root-lasso
+d (Belloni et al. 2011) and the adaptive lasso (Zou 2006) are
+d regularization methods that use L1 norm penalization to achieve
+d sparse solutions: of the full set of p predictors, typically most
+d will have coefficients set to zero. Ridge regression (Hoerl &
+d Kennard 1970) relies on L2 norm penalization; the elastic net
+d (Zou & Hastie 2005) uses a mix of L1 and L2 penalization. lasso2
+d implements all these estimators. rlasso uses the theory-driven
+d penalization methodology of Belloni et al. (2012, 2013, 2014,
+d 2016) for the lasso and square-root lasso. cvlasso implements
+d K-fold cross-validation and h-step ahead rolling cross-validation
+d (for time-series and panel data) to choose the penalization
+d parameters for all the implemented estimators. lassologit,
+d rlassologit and cvlassologit extend support to the case where the
+d dependent variable is a binary response. In addition, rlasso
+d implements the Chernozhukov et al. (2013) sup-score test of joint
+d significance of the regressors that is suitable for the
+d high-dimensional setting.
+d 
+d KW: lasso
+d KW: elastic net
+d KW: ridge regression
+d KW: adaptive lasso
+d KW: cross-validation
+d KW: high-dimensional models
+d KW: regularization
+d KW: penalization
+d KW: sparsity
+d 
+d Requires: Stata version 13.1
+d 
+d Distribution-Date: 20240918
+d 
+d Author: Achim Ahrens, Economic and Social Research Institute, Republic of Ireland
+d Support: email achim.ahrens@@esri.ie
+d 
+d Author: Christian B. Hansen, University of Chicago
+d Support: email Christian.Hansen@@chicagobooth.edu
+d 
+d Author: Mark E Schaffer, Heriot-Watt University
+d Support: email m.e.schaffer@@hw.ac.uk
+d 
+f l\lassoutils.ado
+f l\lasso2.ado
+f l\lasso2_p.ado
+f l\lasso2.sthlp
+f c\cvlasso.ado
+f c\cvlasso.sthlp
+f c\cvlassologit.sthlp
+f r\rlasso.ado
+f c\cvlassologit.ado
+f l\lassologit.ado
+f r\rlassologit.ado
+f l\lassologit_p.ado
+f r\rlasso_p.ado
+f r\rlasso.sthlp
+f l\lassopack.sthlp
+f l\lassologit.ihlp
+f l\lassologit.sthlp
+f r\rlassologit.sthlp
+e
+S http://fmwww.bc.edu/repec/bocode/p
+N pdslasso.pkg
+D  9 Jun 2026
+U 4
+d 'PDSLASSO': module for post-selection and post-regularization OLS or IV estimation and inference
+d 
+d  pdslasso and ivlasso are routines for estimating structural
+d parameters in linear models with many controls and/or
+d instruments. The routines use methods for estimating sparse
+d high-dimensional models, specifically the lasso (Least Absolute
+d Shrinkage and Selection Operator, Tibshirani 1996) and the
+d square-root-lasso (Belloni et al. 2011, 2014). These estimators
+d are used to select controls (pdslasso) and/or instruments
+d (ivlasso) from a large set of variables (possibly numbering more
+d than the number of observations), in a setting where the
+d researcher is interested in estimating the causal impact of one
+d or more (possibly endogenous) causal variables of interest. Two
+d approaches are implemented in pdslasso and ivlasso: (1) The
+d "post-double-selection" (PDS) methodology of Belloni et al.
+d (2012, 2013, 2014, 2015, 2016). (2) The "post-regularization"
+d (CHS) methodology of Chernozhukov, Hansen and Spindler (2015).
+d For instrumental variable estimation, ivlasso implements
+d weak-identification-robust hypothesis tests and confidence sets
+d using the Chernozhukov et al. (2013) sup-score test. The
+d implemention of these methods in pdslasso and ivlasso require the
+d Stata program rlasso (available in the separate Stata module
+d lassopack), which provides lasso and square root-lasso estimation
+d with data-driven penalization.
+d 
+d KW: lasso
+d KW: causal inference
+d KW: high-dimensional models
+d KW: instrumental variables
+d KW: square-root lasso
+d KW: regularization
+d KW: penalization
+d KW: sparsity
+d KW: post-double-selection
+d KW: post-regularization
+d 
+d Requires: Stata version 13.1 and lassopack, ranktest from SSC (q.v.)
+d 
+d Distribution-Date: 20240806
+d 
+d Author: Achim Ahrens, Economic and Social Research Institute, Republic of Ireland
+d Support: email achim.ahrens@@esri.ie
+d 
+d Author: Christian B. Hansen, University of Chicago
+d Support: email Christian.Hansen@@chicagobooth.edu
+d 
+d Author: Mark E Schaffer, Heriot-Watt University
+d Support: email m.e.schaffer@@hw.ac.uk
+d 
+f p\pdslasso.ado
+f p\pdslasso.sthlp
+f i\ivlasso.ado
+f i\ivlasso_p.ado
+f i\ivlasso.sthlp
+f i\ivlasso.ihlp
+e
+S http://fmwww.bc.edu/repec/bocode/u
+N uirt.pkg
+D  9 Jun 2026
+U 5
+d 'UIRT': module to fit unidimensional Item Response Theory models
+d 
+d  uirt is a Stata module for estimating variety of unidimensional
+d IRT models (2PLM, 3PLM, GRM, PCM, GPCM).  It features multi-group
+d modelling, DIF analysis, item-fit analysis and    generating
+d plausible values (PVs) conditioned via latent regression.  uirt
+d implements the EM algorithm (Dempster, Laird & Rubin, 1977) in
+d the form of marginal maximum likelihood    estimation (MML)
+d proposed by Bock & Aitkin (1981) with normal Gauss-Hermite
+d quadrature.  LR test is used for DIF testing and model based
+d P-DIF effect size measures are provided    (Wainer, 1993).
+d Generating PVs is performed by adapting a MCMC method developed
+d for IRT models by Patz & Junker (1999).  Observed response
+d proportions are plotted against the item    characteristic curves
+d to allow for detailed graphical item fit analysis.  Two item-fit
+d statistics are available: S-X2 by Orlando and Thissen (2000) and
+d chi2W developed by the author    (Kondratek, 2022).
+d 
+d KW: item response theory; differential item functioning; item fit; plausible values
+d 
+d Requires: Stata version 10
+d 
+d Distribution-Date: 20230206
+d 
+d Author:   Bartosz Kondratek, Educational Research Institute
+d Support: email  everythingthatcounts@@gmail.com
+d 
+f u\uirt.ado
+f u\uirt.sthlp
+f u\uirt_chi2w.ado
+f u\uirt_chi2w.sthlp
+f u\uirt_dif.ado
+f u\uirt_dif.sthlp
+f u\uirt_esf.ado
+f u\uirt_esf.sthlp
+f u\uirt_icc.ado
+f u\uirt_icc.sthlp
+f u\uirt_inf.ado
+f u\uirt_inf.sthlp
+f u\uirt_sx2.ado
+f u\uirt_sx2.sthlp
+f u\uirt_theta.ado
+f u\uirt_theta.sthlp
+e
+S http://fmwww.bc.edu/repec/bocode/u
+N unique.pkg
+D  9 Jun 2026
+U 6
+d 'UNIQUE': module to report number of unique values in variable(s)
+d 
+d  The command unique without a by reports the number of unique
+d values for the varlist. With a by it does the same, but also
+d creates a new variable (_Unique by default but can be named in
+d the gen option). This new variable contains the number of unique
+d values of the varlist for each level of the by variable. The new
+d variable is coded missing except for the first record in each
+d group defined by the levels of the by variable. The command is
+d useful for exploring data where the records refer to more than
+d one level, for example longitudinal data where each record refers
+d to a visit by a subject.
+d 
+d 
+d Requires: Stata version 10.1
+d 
+d Distribution-Date: 20200618
+d 
+d Author: Tony Brady
+d Support: email tony@@sealedenvelope.com
+d 
+f u\unique.ado
+f u\unique.sthlp
+e
+S http://fmwww.bc.edu/repec/bocode/e
+N egenmore.pkg
+D  9 Jun 2026
+U 7
+d 'EGENMORE': modules to extend the generate function
+d 
+d  This package includes various -egen- functions. For full
+d details, please read the help file (ssc type egenmore.sthlp).
+d Some of these routines are updates of those published in STB-50.
+d _gfilter, _ggroup2, _gegroup and _gcorr require Stata 7.
+d _gminutes, _grepeat and _gseconds require Stata 8.  _gcorr and
+d _gnoccur were written by Nick Winter
+d (nwinter@policystudies.com). _grsum2 was written by Steven
+d Stillman (s.stillman@verizon.net). _gdhms, _gelap, _gelap2,
+d _ghms, _gtod and _gtruncdig were written by Kit Baum
+d (baum@bc.edu).
+d 
+d KW: egen
+d KW: grouping
+d KW: graphing
+d KW: strings
+d KW: dates
+d KW: first
+d KW: last
+d KW: random
+d KW: row
+d 
+d Requires: Stata version 6.0 (7.0 for _gfilter7, _ggroup2, _gegroup, _gsieve, _gnoccur; 8.2 for _gcorr, _grepeat, _gminutes, _gseconds, _gfilter, _gaxis, _gdensity, _gxtile, _gtotal0, _gmixnorm, _gw
+d 
+d 
+d Author: Nicholas J. Cox, University of Durham
+d Support: email N.J.Cox@@durham.ac.uk
+d 
+d Distribution-Date: 20190124
+d 
+f e\egenmore.sthlp
+f _\_gclsst.ado
+f _\_gnmiss.ado
+f _\_ggmean.ado
+f _\_ghmean.ado
+f _\_grall.ado
+f _\_grany.ado
+f _\_grcount.ado
+f _\_grndsub.ado
+f _\_grndint.ado
+f _\_gfilter.ado
+f _\_gifirst.ado
+f _\_gilast.ado
+f _\_gncyear.ado
+f _\_ghmm.ado
+f _\_ghmmss.ado
+f _\_gincss.ado
+f _\_gfirst.ado
+f _\_glastnm.ado
+f _\_gnss.ado
+f _\_gbom.ado
+f _\_gbomd.ado
+f _\_geom.ado
+f _\_geomd.ado
+f _\_gnwords.ado
+f _\_gwordof.ado
+f _\_gnvals.ado
+f _\_gridit.ado
+f _\_gsemean.ado
+f _\_gmsub.ado
+f _\_gston.ado
+f _\_gntos.ado
+f _\_gewma.ado
+f _\_grecord.ado
+f _\_gbase.ado
+f _\_gdecimal.ado
+f _\_ggroup2.ado
+f _\_gsumoth.ado
+f _\_gegroup.ado
+f _\_gcorr.ado
+f _\_grsum2.ado
+f _\_gsieve.ado
+f _\_gdhms.ado
+f _\_ghms.ado
+f _\_gtod.ado
+f _\_gelap.ado
+f _\_gelap2.ado
+f _\_gnoccur.ado
+f _\_gwtfreq.ado
+f _\_gvar.ado
+f _\_gminutes.ado
+f _\_gseconds.ado
+f _\_grepeat.ado
+f _\_gaxis.ado
+f _\_gdensity.ado
+f _\_gxtile.ado
+f _\_gtotal0.ado
+f _\_gmixnorm.ado
+f _\_gadjl.ado
+f _\_gadju.ado
+f _\_gdayofyear.ado
+f _\_gfoy.ado
+f _\_goutside.ado
+f _\_gmlabvpos.ado
+f _\_giso3166.ado
+f _\_growmedian.ado
+f _\_gwpctile.ado
+f _\_gd2.ado
+f _\_grownvals.ado
+f _\_growsvals.ado
+f _\_gtruncdig.ado
+e
+S http://fmwww.bc.edu/repec/bocode/b
+N balancetable.pkg
+D  9 Jun 2026
+U 8
+d 'BALANCETABLE': module to build a balance table and print it in a LaTeX file or an Excel file
+d 
+d  The command balancetable allows checking the balance of
+d variables across subsamples (typically a treatment group and a
+d control group), by creating a table with subsample means and
+d standard deviations for the aforementioned variables, as well as
+d differences in means and corresponding standard errors (or
+d p-values). This well-formatted table is exported to LaTeX or
+d Excel, and it can be customized using several formatting options. d
+d KW: balance table
+d KW: export
+d KW: Excel
+d KW: LaTeX
+d 
+d Requires: Stata version 14 and listtab from SSC (q.v.)
+d 
+d Distribution-Date: 20181123
+d 
+d Author: Mattia Chiapello
+d Support: email chiapello.ma@@gmail.com
+d 
+f b\balancetable.ado
+f b\balancetable.sthlp
+e
+S http://fmwww.bc.edu/repec/bocode/s
+N smileplot.pkg
+D  9 Jun 2026
+U 9
+d 'SMILEPLOT': module to create plots for use with multiple significance tests
+d 
+d  This package contains the programs multproc, smileplot and
+d smileplot7.     multproc inputs a data set with 1 observation
+d for each of a set of multiple       significance tests and data
+d on the P-values, and carries out a multiple test  procedure
+d chosen by the user to define a corrected overall critical P-value
+d for accepting or rejecting the null hypotheses tested.
+d These procedures  may be one-step, step-up or step-down, and
+d may control the familywise error  rate (eg the Bonferroni,
+d Sidak, Holm, Holland-Copenhaver, Hochberg and Rom
+d procedures) or the false discovery rate (eg the Simes,
+d Benjamini-Liu,       Benjamini-Yekutieli and
+d Benjamini-Krieger-Yekutieli procedures). smileplot,     and its
+d Stata 7 version smileplot7, work by calling multproc and then
+d   creating a smile plot, with data points corresponding to
+d multiple estimated    parameters, the P-values (on a reverse
+d log scale) on the Y-axis, and the   corresponding parameter
+d estimates (or another variable) on the X-axis. There      are
+d Y-axis reference lines at the uncorrected and corrected overall
+d critical  P-values. The reference line at the corrected
+d critical P-value, known as the       parapet line, is interpreted
+d informally as a boundary between data mining and  data
+d dredging. multproc, smileplot and smileplot7 are used on data
+d sets with   one observation per estimated parameter and data
+d on estimates and their       P-values, which may be created using
+d parmby, parmest, statsby or postfile.
+d 
+d KW: plot
+d KW: multiple analyses
+d KW: multiple significance tests
+d 
+d Requires: Stata version 10.0
+d 
+d Distribution-Date: 20121011
+d 
+d Author: Roger Newson, National Heart and Lung Institute, Imperial College London
+d Support: email r.newson@@imperial.ac.uk
+d 
+f s\smileplot.ado
+f s\smileplot.sthlp
+f s\smileplot7.ado
+f s\smileplot7.sthlp
+f m\multproc.ado
+f m\multproc.sthlp
+e
+S http://fmwww.bc.edu/repec/bocode/m
+N missings.pkg
+D  9 Jun 2026
+U 10
+d 'MISSINGS': module to manage missing values
+d 
+d  missings includes utility commands for managing variables  that
+d (may) have missing values, which variously report, list  and
+d tabulate missing values; generate a variable containing  numbers
+d of missing values; and drop variables and/or observations that
+d are all missing.   missings is intended to unite and supersede
+d the author's previous commands nmissing and dropmiss.
+d 
+d KW: missings
+d KW: drop
+d KW: data management
+d KW: missing values
+d 
+d Requires: Stata version 12
+d 
+d Distribution-Date: 20170511
+d 
+d Author: Nicholas J. Cox, Durham University
+d Support: email N.J.Cox@@durham.ac.uk
+d 
+f m\missings.ado
+f m\missings.sthlp
+e
+S http://fmwww.bc.edu/repec/bocode/l
+N listtab.pkg
+D 10 Jun 2026
+U 11
+d 'LISTTAB': module to list variables as rows of a TeX, HTML or word processor table
+d 
+d   listtab outputs a list of variables to the Stata log or to a
+d file as TeX, HTML or word processor table rows, which can then be
+d inserted into a TeX, HTML or word processor table by cutting and
+d pasting and/or file linking and/or embedding (eg using the TeX
+d \input command). listtab produces the table rows, but may also
+d produce a set of header lines before the table rows and/or footer
+d lines after the table rows, containing preambles and/or table
+d definitions and/or table headers and/or table footers, as
+d specified by the user.
+d 
+d KW: output
+d KW: LaTeX
+d KW: HTML
+d KW: RTF
+d 
+d Requires: Stata version 11.0
+d 
+d Distribution-Date: 20210709
+d 
+d Author: Roger Newson,  King's College London
+d Support: email roger.newson@@kcl.ac.uk
+d 
+f l\listtab.ado
+f l\listtab.sthlp
+f l\listtab_rstyle.ado
+f l\listtab_rstyle.sthlp
+f l\listtab_vars.ado
+f l\listtab_vars.sthlp
+e
+S http://fmwww.bc.edu/repec/bocode/i
+N ivreg2.pkg
+D 10 Jun 2026
+U 12
+d 'IVREG2': module for extended instrumental variables/2SLS and GMM estimation
+d 
+d  ivreg2 provides extensions to Stata's official ivregress and
+d newey. Its main capabilities: two-step feasible GMM estimation;
+d continuously updated GMM estimation (CUE); LIML and k-class
+d estimation; automatic output of the Hansen-Sargan or
+d Anderson-Rubin statistic for overidentifying restrictions; C
+d statistic test of exogeneity of subsets of instruments (orthog()
+d option); kernel-based autocorrelation-consistent (AC) and
+d heteroskedastic and autocorrelation-consistent (HAC) estimation,
+d with user-specified choice of kernel; Cragg's "heteroskedastic
+d OLS" (HOLS) estimator; default reporting of large-sample
+d statistics (z and chi-squared rather than t and F); small option
+d to report small-sample statistics; first-stage regression
+d reported with F-test of excluded instruments and R-squared with
+d included instruments "partialled-out"; enhanced Kleibergen-Paap
+d and Cragg-Donald tests for weak instruments, redundancy of
+d instruments, significance of endogenous regressors; two-way
+d clustering of standard errors;  Kiefer and Driscoll-Kraay
+d standard errors. ivreg2 can also be used for ordinary least
+d squares (OLS) estimation using the same command syntax as Stata's
+d official regress and newey. New in this version: ivreg2 now
+d supports factor variables. This is version 4.1.11 of ivreg2,
+d updated from that published in Stata Journal, 5(4), requiring
+d Stata 11.2 or better. Stata 8.2/9.2/10.2 users may use this
+d routine, which will  automatically call ivreg28, ivreg29, or
+d ivreg210, respectively. These versions are now included in the
+d ivreg2 package. Stata 7 users may use the Stata Journal version
+d of ivreg2, accessible via net search ivreg2.
+d 
+d KW: instrumental variables
+d KW: Sargan test
+d KW: robust estimation
+d KW: orthogonality
+d KW: GMM
+d KW: Hansen's J
+d KW: heteroskedastic OLS
+d 
+d Requires: Stata version 11.2 and ranktest from SSC
+d 
+d Distribution-Date: 20240814
+d 
+d Author: Christopher F Baum, Boston College
+d Support: email baum@@bc.edu
+d 
+d Author: Mark E Schaffer, Heriot-Watt University
+d Support: email m.e.schaffer@@hw.ac.uk
+d 
+d Author: Steven Stillman, Free University of Bozen-Bolzano
+d Support: email  Steven.Stillman@@unibz.it
+d 
+f i\ivreg2.ado
+f i\ivreg2.sthlp
+f i\ivreg2_p.ado
+f l\livreg2.mlib
+f i\ivreg210.ado
+f i\ivreg210.sthlp
+f i\ivreg210_p.ado
+f i\ivreg29.ado
+f i\ivreg29.hlp
+f i\ivreg29_p.ado
+f i\ivreg29_cue.ado
+f i\ivreg28.ado
+f i\ivreg28.hlp
+f i\ivreg28_p.ado
+f i\ivreg28_cue.ado
+e
+S http://fmwww.bc.edu/repec/bocode/r
+N ranktest.pkg
+D 10 Jun 2026
+U 13
+d 'RANKTEST': module to test the rank of a matrix
+d 
+d  ranktest implements various tests for the rank of a matrix.
+d Tests of the rank of a matrix have many practical applications.
+d For example, in econometrics the requirement for identification
+d is the rank condition, which states that a particular matrix must
+d be of full column rank. Another example from econometrics
+d concerns cointegration in vector autoregressive (VAR) models; the
+d Johansen trace test is a test of a rank of a particular matrix.
+d The traditional test of the rank of a matrix for the standard
+d (stationary) case is the Anderson (1951) canonical correlations
+d test. If we denote one list of variables as Y and a second as Z,
+d and we calculate the squared canonical correlations between Y and
+d Z, the LM form of the Anderson test, where the null hypothesis is
+d that the matrix of correlations or regression parameters B
+d between Y and Z has rank(B)=r, is N times the sum of the r+1
+d largest squared canonical correlations. A large test statistic
+d and rejection of the null indicates that the matrix has rank at
+d least r+1. The Cragg-Donald (1993) statistic is a closely related
+d Wald test for the rank of a matrix. The standard versions of
+d these tests require the assumption that the covariance matrix has
+d a Kronecker form; when this is not so, e.g., when disturbances
+d are heteroskedastic or autocorrelated, the test statistics are no
+d longer valid. ranktest implements various generalizations of
+d these tests - Kleibergen-Paap, Cragg-Donald, and J-type 2-step
+d GMM and CUE GMM tests - to the case of a non-Kronecker covariance
+d matrix. The implementation in ranktest will calculate test
+d statistics that are robust to various forms of
+d heteroskedasticity, autocorrelation, and clustering.
+d 
+d KW: matrix
+d KW: rank
+d KW: collinearity
+d KW: cointegration
+d 
+d Requires: Stata version 12 (version 9.2 for ranktest9, version 11 for ranktest11)
+d 
+d Distribution-Date: 20200929
+d 
+d Author: Frank Kleibergen, Brown University
+d Support: email  Frank_Kleibergen@@brown.edu
+d 
+d Author: Mark E Schaffer, Heriot-Watt University
+d Support: email m.e.schaffer@@hw.ac.uk
+d 
+d Author: Frank Windmeijer, University of Oxford
+d Support: email frank.windmeijer@@stats.ox.ac.uk
+d 
+f r\ranktest.ado
+f r\ranktest9.ado
+f r\ranktest11.ado
+f r\ranktest.sthlp
+f r\ranktest11.sthlp
+f l\livreg2.mlib
+e
+S http://fmwww.bc.edu/repec/bocode/r
+N require.pkg
+D 10 Jun 2026
+U 14
+d 'REQUIRE': module to ensure that installed packages have a minimum or exact version.
+d 
+d    Use require to help the reproductibility of your research, by
+d ensuring that people that run your code are using    compatible
+d versions of the packages you use (either minimum versions, of
+d exact versions).
+d 
+d KW: programming
+d KW: reproducibility
+d 
+d Requires: Stata version 14
+d 
+d Distribution-Date: 20230921
+d 
+d Author: Sergio Correia, Board of Governors of the Federal Reserve System
+d Support: email sergio.correia@@gmail.com
+d 
+d Author: Matthew P. Seay, Board of Governors of the Federal Reserve System
+d Support: email matt.seay@@frb.gov
+d 
+f r\require.ado
+f r\require.sthlp
+e

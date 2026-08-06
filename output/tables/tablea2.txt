@@ -1,0 +1,32 @@
+\multicolumn{1}{l}{\textbf{Panel A: Arabic}} &      &       &     &  & &  \\
+\multicolumn{1}{l}{\% Female} &  &         3343       &          3517   &  &        49.84 &  -0.93 \\
+  &       &   &  & & [50.01] &  (1.43)  \\
+\multicolumn{1}{l}{\% Ever repeated} &  &         3033        &          3176   &  &       12.69 &  0.11 \\
+  &       &   & & & [33.30] &  (0.92)  \\
+\multicolumn{1}{l}{\% Qualified for Tayssir} &   &         3343       &          3517  &  &         22.23 &  0.71 \\
+  &       &   &   &       & [41.58] &  (1.18)  \\
+\multicolumn{1}{l}{Baseline test score} &  &         3343 &          3517 &  &         -0.38 &  -0.01 \\
+  &       &   &   &       & [0.95] &  (0.06)  \\
+Joint F-test (p-value) &  &   &   &       &       &         0.93 \\
+ &        &   &   &       &       &  \\
+\multicolumn{1}{l}{\textbf{Panel B: French}} &       &       &    &       &       &       \\
+\multicolumn{1}{l}{\% Female} &  &         3329       &          3529   &  &        50.23 &  -0.34 \\
+  &       &   &  & & [50.01] &  (1.47)  \\
+\multicolumn{1}{l}{\% Ever repeated} &  &         3001        &          3196   &  &       12.86 &  0.62 \\
+  &       &   & & & [33.48] &  (0.97)  \\
+\multicolumn{1}{l}{\% Qualified for Tayssir} &   &         3329       &          3529  &  &         23.19 &  -0.56 \\
+  &       &   &   &       & [42.21] &  (1.08)  \\
+\multicolumn{1}{l}{Baseline test score} &  &         3276 &          3486 &  &          0.20 &  -0.11* \\
+  &       &   &   &       & [1.03] &  (0.06)  \\
+Joint F-test (p-value)    &       &   &   &       &       &         0.50 \\
+ &        &   &   &       &       &  \\
+\multicolumn{1}{l}{\textbf{Panel C: Math}} &       &       &      & & &   \\
+\multicolumn{1}{l}{\% Female} &  &         3449       &          3617   &  &        48.13 &  0.31 \\
+  &       &   &  & & [49.97] &  (1.50)  \\
+\multicolumn{1}{l}{\% Ever repeated} &  &         3147        &          3324   &  &       13.54 &  -1.27 \\
+  &       &   & & & [34.22] &  (0.90)  \\
+\multicolumn{1}{l}{\% Qualified for Tayssir} &   &         3449       &          3617  &  &         22.09 &  1.01 \\
+  &       &   &   &       & [41.49] &  (1.02)  \\
+\multicolumn{1}{l}{Baseline test score} &  &         3449 &          3617 &  &         -0.51 &  -0.06* \\
+  &       &   &   &       & [0.88] &  (0.03)  \\
+Joint F-test (p-value)    &       &   &   &       &       &         0.26 \\

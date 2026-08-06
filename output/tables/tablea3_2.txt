@@ -1,0 +1,2 @@
+Words read correctly / minute &   8.43*** & 9.50*** \\
+ &   (2.48) & (2.51) \\

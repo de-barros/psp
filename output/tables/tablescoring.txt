@@ -1,0 +1,6 @@
+\multicolumn{1}{l}{Arabic} & 0.34*** & 0.55*** \\
+  & (0.04) & (0.05) \\
+\multicolumn{1}{l}{French} & 0.86*** & 1.49*** \\
+  & (0.04) & (0.05) \\
+\multicolumn{1}{l}{Mathematics} & 0.93*** & -- \\
+  & (0.04) &  \\

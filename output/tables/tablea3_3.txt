@@ -1,0 +1,14 @@
+At grade &   0.97*** & 1.08*** \\
+ &   (0.04) & (0.06) \\
+Below grade &   0.87*** & 0.80*** \\
+ &   (0.04) & (0.06) \\
+Calculation and numeracy &   0.87*** & 0.79*** \\
+ &   (0.04) & (0.06) \\
+Geometry, measures, and data &   0.97*** & 1.08*** \\
+ &   (0.04) & (0.06) \\
+Knowing &   0.87*** & 0.77*** \\
+ &   (0.04) & (0.08) \\
+Applying and reasoning &   0.83*** & 0.88*** \\
+ &   (0.04) & (0.05) \\
+Equal weights to content domains &   0.96*** & 0.98*** \\
+ &   (0.04) & (0.06) \\

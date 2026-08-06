@@ -1,0 +1,45 @@
+# ============================================================
+# .gitignore
+# ============================================================
+
+# Machine-specific path files (each replicator maintains their own).
+# Tracked templates: paths_example.do, code/paths_example.R
+paths.do
+code/paths.R
+
+# Confidential data never lives in this repository.
+data/
+
+# ----- Stata artifacts -----
+*.stswp
+~*.do
+*.smcl
+*.log
+
+# Analysis-run byproducts at the repository root (regenerable; not tracked).
+*.png
+*.gph
+
+# ----- R artifacts -----
+.Rhistory
+.RData
+.Rapp.history
+.Rproj.user/
+renv/library/
+renv/local/
+renv/cellar/
+renv/lock/
+renv/python/
+renv/sandbox/
+renv/staging/
+
+# ----- OS / editor cruft -----
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+.claude/
