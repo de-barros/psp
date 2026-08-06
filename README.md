@@ -1,4 +1,4 @@
-# Pioneer School Program (PSP) — replication code
+# Large learning gains from government-delivered school reform in Morocco
 
 This repository contains the Stata and R code that reproduces the tables and
 figures for a study of the one-year effects of Morocco's Pioneer School Program
@@ -12,6 +12,11 @@ estimated with a causal forest.
 The entry point `code/00_master.do` reproduces every exhibit from analysis-ready
 ("clean") data.
 
+## Preregistration
+
+The pre-analysis plan for this study is registered on the Open Science
+Framework: <https://osf.io/zg5ry/>.
+
 ## Data availability
 
 The datasets that support this study are **not** included in this repository and
@@ -20,8 +25,8 @@ are provided separately, subject to their ownership and access conditions.
 - **Primary data (author-collected).** The baseline and endline student
   assessment data (the item responses underlying the IRT-scored Arabic, French,
   and Mathematics tests) were collected by the authors for this study. These can
-  be shared for peer review and, after a deidentification pass, may be deposited
-  more openly.
+  be shared for peer review and, after a deidentification pass, will be
+  deposited openly.
 - **Administrative data (restricted).** All other datasets (school
   administrative records, examination scores, student enrollment and dropout
   records, student lists, and the matched school sample derived from them) are
