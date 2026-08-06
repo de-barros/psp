@@ -13,8 +13,15 @@ this repository. Data rights are governed by the original data
 provider's terms, as described in the Data availability section of
 README.md.
 
+The MIT License below covers only the code written by the authors of this
+package. It does NOT cover the third-party Stata packages vendored under
+code/ado/ or the graph scheme at code/ado/s/scheme-cleanplots.scheme, which
+are redistributed unmodified for reproducibility and remain under their
+original authors' copyright and license terms. See
+code/ado/THIRD_PARTY_NOTICES.md.
+
 ----------------------------------------------------------------------
-MIT License (code only)
+MIT License (code written by the package authors)
 ----------------------------------------------------------------------
 
 Copyright (c) 2026 Hosam Ibrahim, Andreas de Barros, Sarah Deschênes, and Paul Glewwe
